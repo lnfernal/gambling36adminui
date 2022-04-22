@@ -30,7 +30,7 @@ import sidenavLogoLabel from "./styles/sidenav";
 import { useVisionUIController, setMiniSidenav, setTransparentSidenav } from "context";
 
 // Vision UI Dashboard React icons
-// import SimmmpleLogo from "examples/Icons/SimmmpleLogo";
+// import SimmmpleLogo from "components/Icons/SimmmpleLogo";
 
 // function Sidenav({ color, brand, brandName, routes, ...rest }) {
 function Sidenav({ color, brandName, routes, ...rest }) {

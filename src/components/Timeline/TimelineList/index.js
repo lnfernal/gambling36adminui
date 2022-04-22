@@ -27,7 +27,7 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // Timeline context
-import { TimelineProvider } from "examples/Timeline/context";
+import { TimelineProvider } from "components/Timeline/context";
 
 function TimelineList({ title, dark, children }) {
   return (

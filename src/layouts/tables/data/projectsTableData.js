@@ -10,12 +10,12 @@ import VuiTypography from "components/VuiTypography";
 import VuiProgress from "components/VuiProgress";
 
 // Images
-import AdobeXD from "examples/Icons/AdobeXD";
-import Atlassian from "examples/Icons/Atlassian";
-import Slack from "examples/Icons/Slack";
-import Spotify from "examples/Icons/Spotify";
-import Jira from "examples/Icons/Jira";
-import Invision from "examples/Icons/Invision";
+import AdobeXD from "components/Icons/AdobeXD";
+import Atlassian from "components/Icons/Atlassian";
+import Slack from "components/Icons/Slack";
+import Spotify from "components/Icons/Spotify";
+import Jira from "components/Icons/Jira";
+import Invision from "components/Icons/Invision";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 import logoInvesion from "assets/images/small-logos/logo-invision.svg";
 import logoJira from "assets/images/small-logos/logo-jira.svg";

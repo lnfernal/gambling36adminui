@@ -1,8 +1,8 @@
 
 import Dashboard from "layouts/dashboard";
-// import Tables from "layouts/tables";
-// import Billing from "layouts/billing";
-// import Profile from "layouts/profile";
+import Tables from "layouts/tables";
+import Billing from "layouts/billing";
+import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 
 // Vision UI Dashboard React icons
@@ -30,7 +30,7 @@ const routes = [
     key: "tables",
     route: "/tables",
     icon: <IoStatsChart size="15px" color="inherit" />,
-    component: Dashboard,
+    component: Tables,
     noCollapse: true,
   },
   {
@@ -39,7 +39,7 @@ const routes = [
     key: "billing",
     route: "/billing",
     icon: <BsCreditCardFill size="15px" color="inherit" />,
-    component: Dashboard,
+    component: Billing,
     noCollapse: true,
   },
   { type: "title", title: "Account Pages", key: "account-pages" },
@@ -49,7 +49,7 @@ const routes = [
     key: "profile",
     route: "/profile",
     icon: <BsFillPersonFill size="15px" color="inherit" />,
-    component: Dashboard,
+    component: Profile,
     noCollapse: true,
   },
   {
