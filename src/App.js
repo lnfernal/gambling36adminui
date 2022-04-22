@@ -1,68 +1,91 @@
-import { useState } from "react";
-import "./App.css";
-import socketIOClient from "socket.io-client";
+import { useState, useEffect, useMemo } from "react";
 
-function App() {
-  const socket = socketIOClient("http://127.0.0.1:8000");
-  socket.on("connect",()=>{
-    const socketId = socket.io.engine.id;
-    socket.emit( 'join_room', {
-      room: 'akn',
-      socketId: 'akn100'
-  } );
-  })
-  const [playing, setPlaying] = useState(false);
-  const HEIGHT = 500;
-  const WIDTH = 500;
-  const startVideo = () => {
-    setPlaying(true);
-    navigator.getUserMedia(
-      {
-        video: true,
-        audio: true,
-      },
-      (stream) => {
-        let video = document.getElementsByClassName("app_videoFeed")[0];
-        socket.emit('start_live',{
-          room:'akn',
-          stream
-        })
-        if (video) {
-          video.srcObject = stream;
-        }
-      },
-      (err) => console.log(err)
-    );
+// react-router components
+import { Route, Switch, Redirect, useLocation } from "react-router-dom";
+
+// @mui material components
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Sidenav from "components/Sidenav";
+import Configurator from "components/Configurator";
+
+// Vision UI Dashboard React themes
+import theme from "assets/theme";
+
+// Vision UI Dashboard React routes
+import routes from "routes";
+
+// Vision UI Dashboard React contexts
+import { useVisionUIController, setMiniSidenav, setOpenConfigurator } from "context";
+
+export default function App() {
+  const [controller, dispatch] = useVisionUIController();
+  const { miniSidenav, direction, layout, openConfigurator, sidenavColor } = controller;
+  const [onMouseEnter, setOnMouseEnter] = useState(false);
+  const { pathname } = useLocation();
+
+
+  // Open sidenav when mouse enter on mini sidenav
+  const handleOnMouseEnter = () => {
+    if (miniSidenav && !onMouseEnter) {
+      setMiniSidenav(dispatch, false);
+      setOnMouseEnter(true);
+    }
   };
 
-  const stopVideo = () => {
-    console.log('stop')
-    setPlaying(false);
-    let video=document.getElementsByClassName("app_videoFeed")[0];
-    video.srcObject.getTracks().forEach(track => {
-      track.stop();
+  // Close sidenav when mouse leave mini sidenav
+  const handleOnMouseLeave = () => {
+    if (onMouseEnter) {
+      setMiniSidenav(dispatch, true);
+      setOnMouseEnter(false);
+    }
+  };
+
+
+  // Setting the dir attribute for the body element
+  useEffect(() => {
+    document.body.setAttribute("dir", direction);
+  }, [direction]);
+
+  // Setting page scroll to 0 when changing the route
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+  }, [pathname]);
+
+  const getRoutes = (allRoutes) =>
+    allRoutes.map((route) => {
+      if (route.collapse) {
+        return getRoutes(route.collapse);
+      }
+
+      if (route.route) {
+        return <Route exact path={route.route} component={route.component} key={route.key} />;
+      }
+
+      return null;
     });
-  };
+
   return (
-    <div className="App">
-      <div className="app_container">
-        <video
-          height={HEIGHT}
-          width={WIDTH}
-          muted
-          autoPlay
-          className="app_videoFeed"
-        ></video>
-      </div>
-      <div className="app_input">
-        {playing ? (
-          <button onClick={stopVideo}>Stop</button>
-        ) : (
-          <button onClick={startVideo}>Start</button>
-        )}
-      </div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {layout === "dashboard" && (
+        <>
+          <Sidenav
+            color={sidenavColor}
+            brand=""
+            brandName="GAMBLING 36"
+            routes={routes}
+            onMouseEnter={handleOnMouseEnter}
+            onMouseLeave={handleOnMouseLeave}
+          />
+        </>
+      )}
+      {layout === "vr" && <Configurator />}
+      <Switch>
+        {getRoutes(routes)}
+        <Redirect from="*" to="/dashboard" />
+      </Switch>
+    </ThemeProvider>
   );
 }
-
-export default App;
