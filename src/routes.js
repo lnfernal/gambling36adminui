@@ -9,10 +9,11 @@ import SignIn from "layouts/authentication/sign-in";
 import { IoRocketSharp } from "react-icons/io5";
 import { IoIosDocument } from "react-icons/io";
 import { BsFillPersonFill } from "react-icons/bs";
-import { IoBuild } from "react-icons/io5";
+import { FiVideo } from "react-icons/fi";
 import { BsCreditCardFill } from "react-icons/bs";
-import { IoStatsChart } from "react-icons/io5";
+import { BsFillFileBarGraphFill,BsGearWideConnected } from "react-icons/bs";
 import { IoHome } from "react-icons/io5";
+import Live from "layouts/live";
 
 const routes = [
   {
@@ -24,43 +25,62 @@ const routes = [
     component: Dashboard,
     noCollapse: true,
   },
+  // {
+  //   type: "collapse",
+  //   name: "Tables",
+  //   key: "tables",
+  //   route: "/tables",
+  //   icon: <IoStatsChart size="15px" color="inherit" />,
+  //   component: Tables,
+  //   noCollapse: true,
+  // },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
-    route: "/tables",
-    icon: <IoStatsChart size="15px" color="inherit" />,
-    component: Tables,
+    name: "Live",
+    key: "live",
+    route: "/live",
+    icon: <FiVideo size="15px" color="inherit" />,
+    
+    component: Live,
     noCollapse: true,
   },
+  // { type: "title", title: "Account Pages", key: "account-pages" },
   {
     type: "collapse",
-    name: "Billing",
-    key: "billing",
-    route: "/billing",
-    icon: <BsCreditCardFill size="15px" color="inherit" />,
-    component: Billing,
-    noCollapse: true,
-  },
-  { type: "title", title: "Account Pages", key: "account-pages" },
-  {
-    type: "collapse",
-    name: "Profile",
-    key: "profile",
-    route: "/profile",
+    name: "User",
+    key: "user",
+    route: "/user",
     icon: <BsFillPersonFill size="15px" color="inherit" />,
     component: Profile,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    route: "/sign-in",
-    icon: <IoIosDocument size="15px" color="inherit" />,
-    component: SignIn,
+    name: "Report",
+    key: "report",
+    route: "/report",
+    icon: <BsFillFileBarGraphFill size="15px" color="inherit" />,
+    component: Billing,
     noCollapse: true,
   },
+  {
+    type: "collapse",
+    name: "SetUp",
+    key: "set-up",
+    route: "/set-up",
+    icon: <BsGearWideConnected size="15px" color="inherit" />,
+    component: Billing,
+    noCollapse: true,
+  },
+  // {
+  //   type: "collapse",
+  //   name: "Sign In",
+  //   key: "sign-in",
+  //   route: "/sign-in",
+  //   icon: <IoIosDocument size="15px" color="inherit" />,
+  //   component: SignIn,
+  //   noCollapse: true,
+  // },
 ];
 
 export default routes;

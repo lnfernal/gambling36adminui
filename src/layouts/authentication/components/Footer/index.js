@@ -33,8 +33,9 @@ function Footer() {
             sx={{ textAlign: "center", fontWeight: "400 !important" }}
             color="text"
           >
-            @ 2021, Made with ❤️&nbsp;&nbsp;&nbsp; by{" "}
-            <VuiTypography
+            @ 2021, Made with ❤️&nbsp;&nbsp;&nbsp;
+             {/* by{" "} */}
+            {/* <VuiTypography
               component="a"
               variant="button"
               href="#"
@@ -56,10 +57,10 @@ function Footer() {
             >
               Creative Tim
             </VuiTypography>
-            for a better web
+            for a better web */}
           </VuiTypography>
         </Grid>
-        <Grid item xs={10}>
+        {/* <Grid item xs={10}>
           <VuiBox display="flex" justifyContent="center" flexWrap="wrap" mb={3}>
             <VuiBox mr={{ xs: "20px", lg: "46px" }}>
               <VuiTypography component="a" href="#" variant="body2" color="text">
@@ -77,7 +78,7 @@ function Footer() {
               </VuiTypography>
             </VuiBox>
           </VuiBox>
-        </Grid>
+        </Grid> */}
       </Grid>
     </VuiBox>
   );

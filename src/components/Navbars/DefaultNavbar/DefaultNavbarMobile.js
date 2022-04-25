@@ -49,7 +49,11 @@ function DefaultNavbarMobile({ open, close }) {
     >
       <VuiBox px={0.5}>
         <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
-        <DefaultNavbarLink icon="person" name="profile" route="/profile" />
+        <DefaultNavbarLink icon="person" name="Live" route="/live" />
+
+        <DefaultNavbarLink icon="person" name="User" route="/user" />
+        <DefaultNavbarLink icon="person" name="Report" route="/report" />
+        <DefaultNavbarLink icon="person" name="SetUp" route="/set-up" />
         <DefaultNavbarLink icon="account_circle" name="sign up" route="/authentication/sign-up" />
         <DefaultNavbarLink icon="key" name="sign in" route="/authentication/sign-in" />
       </VuiBox>

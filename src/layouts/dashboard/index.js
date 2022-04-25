@@ -28,11 +28,13 @@ import ReferralTracking from "layouts/dashboard/components/ReferralTracking";
 
 // React icons
 import { IoIosRocket } from "react-icons/io";
-import { IoGlobe } from "react-icons/io5";
+import { BsPeople } from "react-icons/bs";
 import { IoBuild } from "react-icons/io5";
 import { IoWallet } from "react-icons/io5";
 import { IoDocumentText } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
+import { GiMoneyStack } from "react-icons/gi";
+import { GrUserAdmin } from "react-icons/gr";
 
 // Data
 import LineChart from "components/Charts/LineCharts/LineChart";
@@ -41,6 +43,7 @@ import { lineChartDataDashboard } from "layouts/dashboard/data/lineChartData";
 import { lineChartOptionsDashboard } from "layouts/dashboard/data/lineChartOptions";
 import { barChartDataDashboard } from "layouts/dashboard/data/barChartData";
 import { barChartOptionsDashboard } from "layouts/dashboard/data/barChartOptions";
+import BankerTable from "./components/BankerTable";
 
 function Dashboard() {
   const { gradients } = colors;
@@ -54,39 +57,39 @@ function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "today's money", fontWeight: "regular" }}
+                title={{ text: "Total Bet Amount", fontWeight: "regular" }}
                 count="$53,000"
-                percentage={{ color: "success", text: "+55%" }}
-                icon={{ color: "info", component: <IoWallet size="22px" color="white" /> }}
+                // percentage={{ color: "success", text: "+55%" }}
+                icon={{ color: "info", component: <GiMoneyStack size="20px" color="white" /> }}
               />
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "today's users" }}
-                count="2,300"
-                percentage={{ color: "success", text: "+3%" }}
-                icon={{ color: "info", component: <IoGlobe size="22px" color="white" /> }}
+                title={{ text: "Users Count" }}
+                count="300"
+                // percentage={{ color: "success", text: "+3%" }}
+                icon={{ color: "info", component: <BsPeople size="20px" color="white" /> }}
               />
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "new clients" }}
-                count="+3,462"
-                percentage={{ color: "error", text: "-2%" }}
-                icon={{ color: "info", component: <IoDocumentText size="22px" color="white" /> }}
+                title={{ text: "Admin Count" }}
+                count="20"
+                // percentage={{ color: "error", text: "-2%" }}
+                icon={{ color: "info", component: <GrUserAdmin size="20px" color="white" /> }}
               />
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
-                title={{ text: "total sales" }}
+                title={{ text: "total points" }}
                 count="$103,430"
-                percentage={{ color: "success", text: "+5%" }}
-                icon={{ color: "info", component: <FaShoppingCart size="20px" color="white" /> }}
+                // percentage={{ color: "success", text: "+5%" }}
+                icon={{ color: "info", component: <IoWallet size="20px" color="white" /> }}
               />
             </Grid>
           </Grid>
         </VuiBox>
-        <VuiBox mb={3}>
+        {/* <VuiBox mb={3}>
           <Grid container spacing="18px">
             <Grid item xs={12} lg={12} xl={5}>
               <WelcomeMark />
@@ -257,14 +260,27 @@ function Dashboard() {
               </Card>
             </Grid>
           </Grid>
-        </VuiBox>
-        <Grid container spacing={3} direction="row" justifyContent="center" alignItems="stretch">
-          <Grid item xs={12} md={6} lg={8}>
+        </VuiBox> */}
+        <Grid container spacing={3} direction="row" justifyContent="start" alignItems="stretch">
+          {
+            BankerData.map((v, k) => (
+              <Grid item xs={12} md={4} lg={4} key={v.id}>
+                <BankerTable bankerData={v} />
+              </Grid>
+            ))
+          }
+          {/* <Grid item xs={12} md={3} lg={4}>
+            <Projects data={{}} />
+          </Grid>
+          <Grid item xs={12} md={3} lg={4}>
             <Projects />
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={3} lg={4}>
+            <Projects />
+          </Grid> */}
+          {/* <Grid item xs={12} md={6} lg={4}>
             <OrderOverview />
-          </Grid>
+          </Grid> */}
         </Grid>
       </VuiBox>
       <Footer />
@@ -273,3 +289,71 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+const BankerData = [
+  {
+    id: 1,
+    bankerName: 'ဒိုင် ၁', columns: [
+      { name: "Time", align: "left" },
+      { name: "Type", align: "left" },
+      { name: "Za", align: "center" },
+      // { name: "completion", align: "center" },
+    ],
+    rows: [
+      { id: 1, Time: '02:30', Type: 'ဆင်', Za: '၃၀' },
+      { id: 2, Time: '03:30', Type: 'ဆင်', Za: '၃၀' }
+    ]
+  },
+  {
+    id: 2,
+    bankerName: 'ဒိုင် ၂', columns: [
+      { name: "Time", align: "left" },
+      { name: "Type", align: "left" },
+      { name: "Za", align: "center" },
+
+      // { name: "completion", align: "center" },
+    ],
+    rows: [
+      { id: 1, Time: '02:30', Type: 'ဆင်', Za: '၃၀' },
+      { id: 2, Time: '03:30', Type: 'ဆင်', Za: '၃၀' }
+    ],
+  },
+  {
+    id: 3,
+    bankerName: 'ဒိုင် ၃', columns: [
+      { name: "Time", align: "left" },
+      { name: "Type", align: "left" },
+      { name: "Za", align: "center" },
+      // { name: "completion", align: "center" },
+    ], rows: [
+      { id: 1, Time: '02:30', Type: 'ကျား', Za: '၃၀' },
+      { id: 2, Time: '03:30', Type: 'ဆင်', Za: '၃၀' }
+    ],
+  },
+  {
+    id: 4,
+    bankerName: 'ဒိုင် ၄', columns: [
+      { name: "Time", align: "left" },
+      { name: "Type", align: "left" },
+      { name: "Za", align: "center" },
+      // { name: "completion", align: "center" },
+    ], rows: [
+      { id: 1, Time: '02:30', Type: 'ကျား', Za: '၃၀' },
+      { id: 2, Time: '03:30', Type: 'ဆင်', Za: '၃၀' }
+    ],
+  },
+  {
+    id: 5,
+    bankerName: 'ဒိုင် ၅', columns: [
+      { name: "Time", align: "left" },
+      { name: "Type", align: "left" },
+      { name: "Za", align: "center" },
+      // { name: "completion", align: "center" },
+    ], rows: [
+      { id: 1, Time: '02:30', Type: 'ကျား', Za: '၃၀' },
+      { id: 2, Time: '03:30', Type: 'ဆင်', Za: '၃၀' }
+    ],
+  },
+
+
+]

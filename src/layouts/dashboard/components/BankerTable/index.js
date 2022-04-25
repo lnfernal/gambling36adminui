@@ -16,9 +16,9 @@ import VuiTypography from "components/VuiTypography";
 import Table from "components/Tables/Table";
 
 // Data
-import data from "layouts/dashboard/components/Projects/data";
+import data from "layouts/dashboard/components/BankerTable/data";
 
-function Projects(props) {
+function BankerTable(props) {
   const { columns, rows } = data();
   const [menu, setMenu] = useState(null);
 
@@ -91,6 +91,6 @@ function Projects(props) {
   );
 }
 
-export default Projects;
+export default BankerTable;
 
 
