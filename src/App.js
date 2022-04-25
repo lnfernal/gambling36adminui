@@ -8,6 +8,10 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Sidenav from "components/Sidenav";
 import Configurator from "components/Configurator";
+import "./App.css";
+
+import "./fonts/padauk-v12-latin-regular.woff";
+import "./fonts/padauk-v12-latin-regular.woff2";
 
 // Vision UI Dashboard React themes
 import theme from "assets/theme";
@@ -69,6 +73,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      TEst
       {layout === "dashboard" && (
         <>
           <Sidenav
