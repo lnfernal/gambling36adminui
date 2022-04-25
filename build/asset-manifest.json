@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b0162274.css",
+    "main.js": "/static/js/main.89b0a2c0.js",
+    "static/js/787.7ccec136.chunk.js": "/static/js/787.7ccec136.chunk.js",
+    "static/media/body-background.png": "/static/media/body-background.7d7d88a8b4fee8fe76a8.png",
+    "static/media/avatar3.png": "/static/media/avatar3.37c832d11fa533f0d28f.png",
+    "static/media/avatar2.png": "/static/media/avatar2.e81efbfa6cdd3fe024c7.png",
+    "static/media/avatar5.png": "/static/media/avatar5.9b1c3b311bb1a9e58c2c.png",
+    "static/media/signInImage.png": "/static/media/signInImage.54090d1d6f00462e1f4b.png",
+    "static/media/avatar1.png": "/static/media/avatar1.ce022770a11ff3434c20.png",
+    "static/media/avatar6.png": "/static/media/avatar6.c8e1a05cae763fb6aa3f.png",
+    "static/media/avatar4.png": "/static/media/avatar4.9bcc22b7fc82b4eb3c5d.png",
+    "static/media/billing-background-card.png": "/static/media/billing-background-card.3d7d8701828cf939ac08.png",
+    "static/media/cardimgfree.png": "/static/media/cardimgfree.700a968e3c966f18951b.png",
+    "static/media/welcome-profile.png": "/static/media/welcome-profile.7ff4f89a8cf7cddf981e.png",
+    "static/media/sidenav-card-background.png": "/static/media/sidenav-card-background.00019e46ffe060c4df59.png",
+    "static/media/profile-3.png": "/static/media/profile-3.465320e09e781a405d55.png",
+    "static/media/profile-1.png": "/static/media/profile-1.4f9d2540710204ae5b35.png",
+    "static/media/profile-2.png": "/static/media/profile-2.1976e4d016d85fb4beef.png",
+    "static/media/team-2.jpg": "/static/media/team-2.e725aef8c892cb21f262.jpg",
+    "static/media/billing-background-balance.png": "/static/media/billing-background-balance.a2267bef0e0f68d8c374.png",
+    "static/media/logo-slack.svg": "/static/media/logo-slack.7c47c5aa474b5c4fb39fcf05ffb8e4e7.svg",
+    "static/media/logo-xd.svg": "/static/media/logo-xd.6e37886f94dba0c2967ece68a152e30c.svg",
+    "static/media/logo-invision.svg": "/static/media/logo-invision.a1062115730dcd10e1c4f4abe7b9ab33.svg",
+    "static/media/logo-spotify.svg": "/static/media/logo-spotify.e83cf56c9d99a1fdf59e8deb58bbe470.svg",
+    "static/media/logo-jira.svg": "/static/media/logo-jira.c19fd4e416babfbd0fdb0a794188c601.svg",
+    "static/media/logo-webdev.svg": "/static/media/logo-webdev.25d88bfc768c8439fdb33efc0d8e6015.svg",
+    "index.html": "/index.html",
+    "static/media/car-profile.svg": "/static/media/car-profile.8cde6d4c7721bfc5aab67c506cfd9206.svg",
+    "static/media/graph-billing.svg": "/static/media/graph-billing.5619b1ad4bf91498aade4c15ea6b6d93.svg",
+    "static/media/green-lightning.svg": "/static/media/green-lightning.6a8442abc6eaccaa61e011623dd90d86.svg",
+    "static/media/white-lightning.svg": "/static/media/white-lightning.2be39253af911bde179ac691e4da0370.svg",
+    "main.89b0a2c0.js.map": "/static/js/main.89b0a2c0.js.map",
+    "787.7ccec136.chunk.js.map": "/static/js/787.7ccec136.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0162274.css",
+    "static/js/main.89b0a2c0.js"
+  ]
+}
